@@ -21,7 +21,7 @@ export default async function Index() {
           <div className="grid grid-cols-1 gap-4">
             {empresas?.map((empresa, index) => (
               <div key={index} className="p-4 border rounded-md shadow-sm">
-                <h3 className="font-bold">{empresa.empresa}</h3>
+                <h3 className="font-bold">{empresa.rubro_empresa}</h3>
                 <p>{empresa.contacto}</p>
               </div>
             ))}
