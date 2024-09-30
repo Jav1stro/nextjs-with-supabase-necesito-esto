@@ -20,6 +20,7 @@ export default function Index({
   return (
     <>
     <Hero />
+    <Search placeholder="Search..." />
       <main className="w-full flex flex-row justify-between gap-6 md:gap-12">    
         <Suspense key={query + currentPage}>
           <Table query={query} currentPage={currentPage} />

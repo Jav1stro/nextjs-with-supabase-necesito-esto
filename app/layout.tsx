@@ -6,9 +6,6 @@ import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
-import Search from '@/components/ui/search';
-import Image from "next/image";
-import { HomeIcon, UserGroupIcon, BriefcaseIcon, ChatBubbleBottomCenterTextIcon, BellIcon} from '@heroicons/react/24/solid';
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -35,65 +32,21 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* Header */}
-          <header className="header border-b border-gray-300 py-4">
-            <div className="container mx-auto flex justify-between items-center px-6">
-              
-              <div className="header__left flex items-center">
-                <Image 
-                  src="/logo.png" 
-                  alt="Logo de Nesecito Esto!" 
-                  width={40} 
-                  height={40} 
-                />
-                <Link href="/">
-                  <h3 className="text-xl font-bold">Nesecito <span className="text-blue-600">Esto!</span></h3>
-                </Link>
-                <div className="header__search ml-4">
-                  <Search placeholder="Search..." />
-                </div>
-              </div>
-                  
-              {/* Enlaces */}
-              <div className="header__center flex gap-6 items-center">
-                <nav>
-                  <ul className="flex gap-6">
-                    <li className="flex flex-col items-center">
-                      <HomeIcon className="w-6 h-6  header-boton" />
-                      <Link className="ito" href="/">Inicio</Link>
-                    </li>
-                    <li className="flex flex-col items-center">
-                      <UserGroupIcon className="w-6 h-6 " />
-                      <Link className="ito" href="#">Nosotros</Link>
-                    </li>
-                    <li className="flex flex-col items-center">
-                      <BriefcaseIcon className="w-6 h-6 ito" />
-                      <Link className="ito" href={`/demandas`}>Demandas</Link>
-                    </li>
-                    <li className="flex flex-col items-center">
-                      <ChatBubbleBottomCenterTextIcon className="w-6 h-6 ito" />
-                      <Link className="ito" href="#">Mensajes</Link>
-                    </li>
-                    <li className="flex flex-col items-center">
-                      <BellIcon className="w-6 h-6 ito" />
-                      <Link className="ito" href="#">Notificaciones</Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+          <main className="min-h-screen flex flex-col items-center">
+            <div className="flex-1 w-full flex flex-col gap-20 items-center">
+              <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
+                <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
+                  {/* <div className="flex gap-5 items-center font-semibold">
+                    <Link href={"/"}>Next.js Supabase Starter</Link>
+                    <div className="flex items-center gap-2">
+                      <DeployButton />
+                    </div>
+                  </div> */}
+                  {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                  <ThemeSwitcher />
 
-              {/* Enlace session */}
-              <div className="header__right">
-                <nav>
-                  <ul className="flex gap-6">
-                    <li className="flex flex-col items-center">
-                      {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </header>
+                </div>
+              </nav>
               <div className="flex flex-col gap-20 max-w-5xl p-5">
                 {children}
               </div>
@@ -104,7 +57,8 @@ export default function RootLayout({
                 </p>
                 <ThemeSwitcher />
               </footer>
-           
+            </div>
+          </main>
         </ThemeProvider>
       </body>
     </html>
