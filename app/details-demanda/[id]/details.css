@@ -1,0 +1,14 @@
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centra el contenido horizontalmente */
+    padding: 20px;       /* Espaciado alrededor del contenido */
+    margin-top: 200px;   /* Espaciado superior para que no se superponga con el header */
+}
+  
+.details-detalles {
+    border: 1px solid #ddd;    /* Borde para definir el área de detalles */
+    border-radius: 8px;        /* Bordes redondeados */
+    padding: 20px;             /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para un ligero efecto de elevación */
+}
