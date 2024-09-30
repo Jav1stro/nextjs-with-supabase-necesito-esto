@@ -25,7 +25,7 @@ const ModalDetallesPago: React.FC<ModalDetallesPagoProps> = ({ isOpen, onClose, 
         
         {/* Botón para proceder con el pago */}
         <div className="mt-4">
-          <Link className="bg-green-500 text-white py-2 px-4 rounded-lg" href={`/details-demanda/${demanda.id}`}>
+          <Link className="bg-green-500 text-white py-2 px-4 rounded-lg" href={`/demandas/${demanda.id}`}>
             Pagar para obtener más detalles
           </Link>
         </div>

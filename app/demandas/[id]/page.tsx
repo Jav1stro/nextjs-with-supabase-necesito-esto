@@ -1,4 +1,4 @@
-import { getDemandaById } from "@/utils/supabase/client"; // Suponiendo que tienes una función para obtener la demanda por ID
+import { getDemandaById } from "@/actions/demanda-actions/index"; // Suponiendo que tienes una función para obtener la demanda por ID
 import Link from "next/link";
 import "./details.css";
 
