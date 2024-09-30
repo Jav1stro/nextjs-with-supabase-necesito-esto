@@ -94,7 +94,7 @@ export default function RootLayout({
               </div>
             </div>
           </header>
-              <div className="flex flex-col gap-20 max-w-5xl p-5">
+              <div className="flex flex-col gap-20 max-w-5xl p-5 justify-center items-center mx-auto text-center">
                 {children}
               </div>
 
