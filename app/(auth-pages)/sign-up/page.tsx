@@ -1,4 +1,4 @@
-import { signUpAction } from "@/app/actions";
+import { signUpAction } from "@/actions/auth-actions/actions";
 import { FormMessage, Message } from "@/components/form-message";
 import { SubmitButton } from "@/components/submit-button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,6 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
       </div>
     );
   }
-
   return (
     <>
       <form className="flex flex-col min-w-64 max-w-64 mx-auto">
