@@ -1,8 +1,4 @@
-import { signOutAction } from "@/actions/auth-actions/actions";
 import Link from "next/link";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { createClient } from "@/utils/supabase/server";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import Image from "next/image";
 import Search from "@/components/ui/search";
@@ -14,7 +10,6 @@ import {
   BellIcon,
 } from "@heroicons/react/24/solid";
 import HeaderAuth from "@/components/header-auth";
-import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 
 export const Header = () => {

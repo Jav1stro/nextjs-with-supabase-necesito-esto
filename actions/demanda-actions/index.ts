@@ -5,9 +5,10 @@ import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-const supabase = createClient();
 
 export const createDemandAction = async (formData: FormData) => {
+  const supabase = createClient();
+
   const {
     data: { user },
     error: userError,
@@ -55,6 +56,8 @@ export const createDemandAction = async (formData: FormData) => {
 };
 
 export const getUserDemandas = async () => {
+  const supabase = createClient();
+
   // Obtener el usuario autenticado
   const {
     data: { user },
@@ -83,8 +86,21 @@ export const getUserDemandas = async () => {
 
   return [];
 };
+export async function getAllDemandas() {
+  const supabase = createClient();
+  const { data: demandas, error } = await supabase
+    .from("demandas")
+    .select("id, empresa, responsable_solicitud, email_contacto, telefono, fecha_inicio, fecha_vencimiento, rubro_demanda, detalle");
 
+  if (error) {
+    console.error("Error fetching demandas:", error);
+    return [];
+  }
+
+  return demandas;
+}
 export async function getDemandaById(id: string) {
+  const supabase = createClient();
   const { data, error } = await supabase
     .from('demandas')  
     .select('*')

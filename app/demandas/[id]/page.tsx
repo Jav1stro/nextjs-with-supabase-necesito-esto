@@ -1,18 +1,15 @@
+
 import { getDemandaById } from "@/actions/demanda-actions/index"; // Suponiendo que tienes una función para obtener la demanda por ID
 import Link from "next/link";
 import "./details.css";
 
 export default async function DemandaDetails({ params }: { params: { id: string } }) {
-  // Verifica que el ID no sea indefinido
   if (!params.id) {
     return <p>ID de demanda no proporcionado.</p>;
   }
 
-  console.log('ID de la demanda:', params.id); // Depuración para verificar el ID
-
   const demanda = await getDemandaById(params.id);  // Usamos el ID para consultar los datos de la demanda
 
-  // Manejo de error si no se encuentra la demanda o si ocurre un error en la consulta
   if (!demanda) {
     return <p>Error al cargar la demanda. Por favor, intenta de nuevo más tarde.</p>;
   }
