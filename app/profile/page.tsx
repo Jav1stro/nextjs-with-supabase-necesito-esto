@@ -3,10 +3,12 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation"; // Para Next.js 13+
+
 
 export default function ProfilePage() {
   const supabase = createClient();
+  const router = useRouter();
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);
   const [profileError, setProfileError] = useState(null);
@@ -26,16 +28,13 @@ export default function ProfilePage() {
       const { data: { user }, error: userError } = await supabase.auth.getUser();
 
       // Manejo de errores de autenticación
-      if (userError) {
-        console.error("Error al obtener el usuario:", userError);
-        redirect("/sign-in");
+      if (userError || !user) {
+        console.error("Error al obtener el usuario o el usuario no está autenticado:", userError);
+        router.push("/sign-in"); // Usar router.push para redirigir al cliente
         return;
       }
 
-      if (!user) {
-        redirect("/sign-in");
-        return;
-      }
+     
 
       setUser(user);
 
