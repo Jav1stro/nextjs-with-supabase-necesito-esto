@@ -7,10 +7,11 @@ import {
   UserGroupIcon,
   BriefcaseIcon,
   ChatBubbleBottomCenterTextIcon,
-  BellIcon,
+  UserIcon,
 } from "@heroicons/react/24/solid";
 import HeaderAuth from "@/components/header-auth";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
+
 
 export const Header = () => {
   return (
@@ -62,10 +63,8 @@ export const Header = () => {
                 </Link>
               </li>
               <li className="flex flex-col items-center cursor-pointer">
-                <BellIcon className="w-6 h-6 ito" />
-                <Link className="ito" href="#">
-                  Notificaciones
-                </Link>
+                <UserIcon className="w-6 h-6 ito" />
+                <Link className="ito" href="/profile">Mi Perfil</Link>
               </li>
             </ul>
           </nav>
