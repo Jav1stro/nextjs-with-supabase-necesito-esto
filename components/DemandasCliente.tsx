@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import ModalDetallesPago from "@/components/ModalDetallesPago";
+import BotonOfertas from "./ofertas-boton";
 
 export default function DemandasCliente({ demandas }: { demandas: any[] }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -37,6 +38,9 @@ export default function DemandasCliente({ demandas }: { demandas: any[] }) {
               >
                 Saber más
               </button>
+              <BotonOfertas
+              id_demanda={demanda.id}
+              />
             </div>
           ))
         ) : (
