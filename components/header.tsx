@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import Image from "next/image";
-import Search from "@/components/ui/search";
+import Search from "./search";
 import {
   HomeIcon,
   UserGroupIcon,

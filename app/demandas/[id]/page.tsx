@@ -2,6 +2,7 @@
 import { getDemandaById } from "@/actions/demanda-actions/index"; // Suponiendo que tienes una función para obtener la demanda por ID
 import Link from "next/link";
 import "./details.css";
+import BotonOfertas from "@/components/ofertas-boton";
 
 export default async function DemandaDetails({ params }: { params: { id: string } }) {
   if (!params.id) {
@@ -27,6 +28,9 @@ export default async function DemandaDetails({ params }: { params: { id: string 
         <p><strong>Rubro Demanda:</strong> {demanda.rubro_demanda}</p>
         <p><strong>Detalle:</strong> {demanda.detalle}</p>
       </div>
+      <BotonOfertas
+              id_demanda={demanda.id}
+              />
       <Link className="bg-blue-500 text-white text-center py-2 rounded-lg hover:bg-blue-600 mt-2" href="/">
         Iniciar Conversacion
       </Link>
