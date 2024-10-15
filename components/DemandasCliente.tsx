@@ -38,9 +38,11 @@ export default function DemandasCliente({ demandas }: { demandas: any[] }) {
               >
                 Saber más
               </button>
-              <BotonOfertas
+
+              {/*<BotonOfertas
               id_demanda={demanda.id}
-              />
+              />*/}
+              
             </div>
           ))
         ) : (
