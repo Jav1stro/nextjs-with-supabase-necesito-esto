@@ -25,7 +25,7 @@ export default function DemandasCliente({ demandas }: { demandas: any[] }) {
         {demandas.length > 0 ? (
           demandas.map((demanda) => (
             <div
-              key={demanda.empresa}
+              key={demanda.id}
               className="shadow-md rounded-lg p-6 flex flex-col gap-4"
             >
               <h3 className="font-bold text-lg ito">{demanda.detalle}</h3>
