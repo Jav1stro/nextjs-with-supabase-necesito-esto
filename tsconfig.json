@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",  // O usa "ES2015", "ES2017", etc. según lo que necesites
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,7 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "commonjs",  // Si estás usando Node.js y Express, esto es más adecuado
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
